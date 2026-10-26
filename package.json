@@ -1,0 +1,37 @@
+{
+  "name": "turfbook",
+  "version": "1.0.0",
+  "private": true,
+  "description": "TurfBook — a sports turf and court booking platform",
+  "scripts": {
+    "dev": "concurrently -n API,WEB -c cyan,green \"npm run dev:server\" \"npm run dev:client\"",
+    "dev:server": "node --watch server/index.js",
+    "dev:client": "vite --config client/vite.config.mjs",
+    "build": "vite build --config client/vite.config.mjs",
+    "start": "node server/index.js",
+    "seed": "node server/seed.js",
+    "preview": "vite preview --config client/vite.config.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "express-rate-limit": "^7.5.0",
+    "helmet": "^8.0.0",
+    "jsonwebtoken": "^9.0.2",
+    "lucide-react": "^0.468.0",
+    "mongoose": "^8.9.5",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^7.18.4"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.4",
+    "concurrently": "^9.1.2",
+    "vite": "^5.4.11"
+  }
+}

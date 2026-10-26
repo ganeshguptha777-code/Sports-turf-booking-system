@@ -1,0 +1,31 @@
+services:
+  - type: web
+    name: turfbook
+    runtime: node
+    plan: free
+    region: singapore
+    buildCommand: npm install --include=dev && npm run build
+    startCommand: npm start
+    healthCheckPath: /api/health
+    autoDeploy: true
+    envVars:
+      - key: NODE_VERSION
+        value: 22.19.0
+      - key: NODE_ENV
+        value: production
+      - key: MONGO_URI
+        sync: false
+      - key: JWT_SECRET
+        generateValue: true
+      - key: TIMEZONE
+        value: Asia/Kolkata
+      - key: SEED_DEMO
+        value: "true"
+      - key: ADMIN_EMAIL
+        value: admin@turfbook.in
+      - key: ADMIN_PASSWORD
+        sync: false
+      - key: DEMO_EMAIL
+        value: demo@turfbook.in
+      - key: DEMO_PASSWORD
+        sync: false

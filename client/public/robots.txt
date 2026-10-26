@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+
+# Booking actions and account pages require authentication.
+Disallow: /admin
+Disallow: /bookings
